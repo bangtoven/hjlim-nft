@@ -35,8 +35,8 @@ fs.readdir(directoryPath, async function (err, files) {
     const name = file.replace(".jpg", "");
 
     await sharp('input/'+ file)
-      .resize(320, 320, {withoutEnlargement: true})
-      .webp({effort: 6, quality: 60})
+      .resize(300, 300, {withoutEnlargement: true})
+      .webp({effort: 6, quality: 50})
       // .toFile('output/' + file + ".webp")
       .toBuffer()
       .then((buffer) => {
