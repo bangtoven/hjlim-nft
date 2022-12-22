@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/common/ERC2981.sol";
 import "./Base64.sol";
 
-contract FiguresInMindscapes is ERC721, Ownable, ERC2981 {
+contract Catnap is ERC721, Ownable, ERC2981 {
     using Strings for uint256;
 
     using Counters for Counters.Counter;
@@ -16,7 +16,7 @@ contract FiguresInMindscapes is ERC721, Ownable, ERC2981 {
     mapping(uint256 => string) private names;
     mapping(uint256 => string) private images;
 
-    constructor() ERC721("Figures in Mindscapes", "HJL") {
+    constructor() ERC721("Islands of the Mind - Catnap", "CATNAP") {
         _setDefaultRoyalty(msg.sender, 500);
     }
 
@@ -48,10 +48,10 @@ contract FiguresInMindscapes is ERC721, Ownable, ERC2981 {
     {
         string memory name = names[_tokenId];
         string memory image = images[_tokenId];
-        string memory description= "asdfasdf";
+        string memory description= "Figure featured in <Islands of the Mind - Catnap> by Hyunjeong Lim";
         string memory url = string(
             abi.encodePacked(
-                "https://nft.hyunjeonglim.com/ko5ynxPq/",
+                "https://nft.hyunjeonglim.com/catnap/",
                 _tokenId.toString()
             )
         );
@@ -65,8 +65,7 @@ contract FiguresInMindscapes is ERC721, Ownable, ERC2981 {
                                 '{"name":"', name, '",',
                                 '"description":"', description, '",',
                                 '"external_url":"', url, '",',
-                                '"image":"data:image/jpeg;base64,',
-                                image,
+                                '"image":"', image,
                                 '"}'
                             )
                         )
