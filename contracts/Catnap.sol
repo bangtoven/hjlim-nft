@@ -48,7 +48,7 @@ contract Catnap is ERC721, Ownable, ERC2981 {
     {
         string memory name = names[_tokenId];
         string memory image = images[_tokenId];
-        string memory description= "Figure featured in <Islands of the Mind - Catnap> by Hyunjeong Lim";
+        string memory description= "Figure featured in 'Islands of the Mind - Catnap' by Hyunjeong Lim";
         string memory url = string(
             abi.encodePacked(
                 "https://nft.hyunjeonglim.com/catnap/",
